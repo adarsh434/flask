@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,7 +11,7 @@ def findSquare(n):
         "Number" : n,
         "Square" : n*n,
     }
-    return result
+    return jsonify(result)
 
 if( __name__ == "__main__"):
     app.run(debug = True)
